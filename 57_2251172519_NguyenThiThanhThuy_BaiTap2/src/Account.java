@@ -1,26 +1,21 @@
-// Lớp cha Account
 public class Account {
-    protected double balance;
-
+    private double balance;
     public Account(double balance) {
         this.balance = balance;
     }
-
     public double getBalance() {
         return balance;
     }
-
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("Số tiền rút phải lớn hơn 0.");
+            System.out.println("So tien rut cua ban phai lon hon 0");
             return;
         }
-
-        if (balance >= amount) {
+        if (balance - amount >= 0) {
             balance -= amount;
-            System.out.println("Rút thành công. Số dư còn lại: " + balance);
+            System.out.println("Rut tien thanh cong, so du con lai la: " + balance);
         } else {
-            System.out.println("Số dư không đủ để rút.");
+            System.out.println("Rut tien khong thanh cong, so du khong du.");
         }
     }
 }

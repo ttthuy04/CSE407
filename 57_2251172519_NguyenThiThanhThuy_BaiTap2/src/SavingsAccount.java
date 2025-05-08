@@ -1,22 +1,17 @@
-// Lớp SavingsAccount kế thừa Account
 public class SavingsAccount extends Account {
-
     public SavingsAccount(double balance) {
         super(balance);
     }
-
     @Override
     public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("Số tiền rút phải lớn hơn 0.");
+            System.out.println("So tien rut phai lon hon 0");
             return;
         }
-
-        if (balance - amount >= 100) {
-            balance -= amount;
-            System.out.println("Rút thành công (Tài khoản tiết kiệm). Số dư còn lại: " + balance);
+        if (getBalance() - amount >= 100) {
+            super.withdraw(amount);
         } else {
-            System.out.println("Không thể rút. Số dư phải luôn lớn hơn hoặc bằng 100.");
+            System.out.println("Khong the rut tien, so du cua ban luon phai lon hon hoac bang 100");
         }
     }
 }
