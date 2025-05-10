@@ -2,8 +2,7 @@ package maytinh;
 
 public class Main {
     public static void main(String[] args) {
-        BoNho boNho = new BoNho("SSD", 512);
-        MayTinh mayTinh = new MayTinh("Lenovo LOQ", boNho);
+        MayTinh mayTinh = new MayTinh("Lenovo LOQ 2024", "SSD", 512);
         mayTinh.hienThiThongTin();
     }
 }
