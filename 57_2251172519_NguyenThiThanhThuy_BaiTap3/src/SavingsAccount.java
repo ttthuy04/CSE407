@@ -7,11 +7,11 @@ public class SavingsAccount implements Account {
 
     @Override
     public void withdraw(double amount) {
-        if (balance >= amount) {
+        if (amount <= balance) {
             balance -= amount;
-            System.out.println("SavingsAccount: Rút thành công " + amount + ", số dư còn lại của bạn là: " + balance);
+            System.out.println("SavingsAccount: Rút thành công " + amount + ". Số dư còn lại: " + balance);
         } else {
-            System.out.println("SavingsAccount: Rút thất bại, không đủ tiền trong tài khoản.");
+            System.out.println("SavingsAccount: Rút thất bại. Không đủ tiền.");
         }
     }
 

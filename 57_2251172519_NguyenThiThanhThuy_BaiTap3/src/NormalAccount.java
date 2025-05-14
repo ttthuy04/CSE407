@@ -1,19 +1,18 @@
 public class NormalAccount implements Account {
     private double balance;
-
     public NormalAccount(double balance) {
         this.balance = balance;
     }
+
     @Override
     public void withdraw(double amount) {
-        if (balance >= amount) {
+        if (amount <= balance) {
             balance -= amount;
-            System.out.println("NormalAccount: Rút thành công " + amount + ", số dư còn lại của bạn là: " + balance);
+            System.out.println("NormalAccount: Rút thành công " + amount + ". Số dư còn lại: " + balance);
         } else {
-            System.out.println("NormalAccount: Rút thất bại, không đủ tiền trong tài khoản.");
+            System.out.println("NormalAccount: Rút thất bại. Không đủ tiền.");
         }
     }
-
     @Override
     public double getBalance() {
         return balance;

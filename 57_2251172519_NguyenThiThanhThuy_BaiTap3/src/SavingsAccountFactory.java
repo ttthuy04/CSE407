@@ -1,6 +1,6 @@
 public class SavingsAccountFactory extends AccountFactory {
     @Override
-    public Account createAccount(double balance) {
-        return new SavingsAccount(balance);
+    public Account createAccount() {
+        return new SavingsAccount(500);
     }
 }

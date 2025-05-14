@@ -1,6 +1,6 @@
 public class VipAccountFactory extends AccountFactory {
     @Override
-    public Account createAccount(double balance) {
-        return new VipAccount(balance);
+    public Account createAccount() {
+        return new VipAccount(1500);
     }
 }

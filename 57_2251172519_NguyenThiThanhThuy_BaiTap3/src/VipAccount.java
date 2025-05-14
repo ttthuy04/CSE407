@@ -4,17 +4,15 @@ public class VipAccount implements Account {
     public VipAccount(double balance) {
         this.balance = balance;
     }
+
     @Override
     public void withdraw(double amount) {
-        if (amount <= 0) {
-            System.out.println("Số tiền rút phải lớn hơn 0.");
-            return;
-        }
-        if (balance - amount >= -400) {
+        // Cho phép rút vượt số dư nhưng không vượt quá -200
+        if (balance - amount >= -200) {
             balance -= amount;
-            System.out.println("VipAccount: Rút thành công " + amount + ", số dư còn lại của bạn là: " + balance);
+            System.out.println("VipAccount: Rút thành công " + amount + ". Số dư còn lại: " + balance);
         } else {
-            System.out.println("VipAccount: Không thể rút quá giới hạn âm 400. Số dư hiện tại: " + balance);
+            System.out.println("VipAccount: Rút thất bại. Không được vượt quá hạn mức tín dụng -200.");
         }
     }
 

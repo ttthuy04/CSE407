@@ -1,6 +1,6 @@
 public class NormalAccountFactory extends AccountFactory {
     @Override
-    public Account createAccount(double balance) {
-        return new NormalAccount(balance);
+    public Account createAccount() {
+        return new NormalAccount(500);
     }
 }
