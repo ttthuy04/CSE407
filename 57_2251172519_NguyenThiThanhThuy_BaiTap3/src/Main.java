@@ -1,23 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        AccountFactory savingsFactory = new SavingsAccountFactory();
-        AccountFactory normalFactory = new NormalAccountFactory();
-        AccountFactory vipFactory = new VipAccountFactory();
+        AccountFactory factory;
 
-        Account savings = savingsFactory.createAccount(500);
-        Account normal = normalFactory.createAccount(300);
-        Account vip = vipFactory.createAccount(200);
+        factory = new VipAccountFactory();
+        factory.withdraw(500, 100);
 
-        System.out.println("\n--- SavingsAccount ---");
-        savings.withdraw(450);
-        savings.withdraw(300);
-
-        System.out.println("\n--- NormalAccount ---");
-        normal.withdraw(350);
-        normal.withdraw(150);
-
-        System.out.println("\n--- VIPAccount ---");
-        vip.withdraw(600);
-        vip.withdraw(200);
+//        factory = new SavingsAccountFactory();
+//        factory.withdraw(200, 500);
+//
+//        factory = new NormalAccountFactory();
+//        factory.withdraw(100, 80);
     }
 }

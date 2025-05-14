@@ -1,18 +1,22 @@
-public class SavingsAccount extends Account {
+public class SavingsAccount implements Account {
+    private double balance;
+
     public SavingsAccount(double balance) {
-        super(balance);
+        this.balance = balance;
     }
+
     @Override
     public void withdraw(double amount) {
-        if (amount <= 0) {
-            System.out.println("Số tiền rút của bạn phải lớn hơn 0.");
-            return;
-        }
-        if (balance - amount >= 100) {
+        if (balance >= amount) {
             balance -= amount;
-            System.out.println("Rút thành công. Số dư còn lại của bạn: " + balance);
+            System.out.println("SavingsAccount: Rút thành công " + amount + ", số dư còn lại của bạn là: " + balance);
         } else {
-            System.out.println("Số dư tối thiểu phải là 100. Không thể rút.");
+            System.out.println("SavingsAccount: Rút thất bại, không đủ tiền trong tài khoản.");
         }
+    }
+
+    @Override
+    public double getBalance() {
+        return balance;
     }
 }
