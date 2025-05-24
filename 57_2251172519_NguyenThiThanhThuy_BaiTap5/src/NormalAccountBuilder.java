@@ -17,7 +17,7 @@ public class NormalAccountBuilder implements AccountBuilder {
     }
 
     @Override
-    public Account getResult() {
+    public Object getResult() {
         return account;
     }
 }

@@ -1,23 +1,23 @@
-public class SavingsAccountBuilder implements AccountBuilder {
-    private SavingsAccount account;
+public class AccountDirector {
+    private AccountBuilder builder;
 
-    @Override
-    public void reset() {
-        account = new SavingsAccount();
+    public AccountDirector(AccountBuilder builder) {
+        this.builder = builder;
     }
 
-    @Override
-    public void buildBalance(double amount) {
-        account.setBalance(amount);
+    public void changeBuilder(AccountBuilder builder) {
+        this.builder = builder;
     }
 
-    @Override
-    public void buildWithdraw(double amount) {
-        account.withdraw(amount);
-    }
-
-    @Override
-    public Account getResult() {
-        return account;
+    public Object make(String type) {
+        builder.reset();
+        if (type.equalsIgnoreCase("normal")) {
+            builder.buildBalance(1000);
+            builder.buildWithdraw(100);
+        } else if (type.equalsIgnoreCase("savings")) {
+            builder.buildBalance(1500);
+            builder.buildWithdraw(300);
+        }
+        return builder.getResult();
     }
 }
